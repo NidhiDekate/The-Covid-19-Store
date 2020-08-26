@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Other Links-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <!--Css Link-->
+    <link rel="stylesheet" href="style.css">
+    <title>The Covid-19 Store</title>
+    <script src="logic.js">
+        
+    </script>
+</head>
+<body onload="cartsCount(), onLoadCartNumbers(), displayCart() ">
+<!--Navbar Section Starts Here-->
+<section id="navbar">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html"><img src="images/COVID19 logo.png" alt="Brand-Logo"></a>
+        <button class="btn modal-link" data-toggle="modal" data-target="#myModal"><i class="fa fa-user-md fa-2x"></i> Book Appoitments</button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <form class="form-inline search-box">
+                <input class="form-control input-search" type="search" placeholder="Search">
+                <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Product
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#mask">Mask</a>
+                  <a class="dropdown-item" href="#PPEkits">PPE Kits</a>
+                  <a class="dropdown-item" href="#thermometer">Thermometer</a>
+                  <a class="dropdown-item" href="#sanitizers">Sanitisers</a>
+                  <a class="dropdown-item" href="#medicines">Medicines</a>
+                </div>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#volunteer">Join Us<span class="sr-only">(current)</span></a>
+              </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Sign Up <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Log In</a>
+              </li> -->
+            
+            <li>
+                <a href="#" class="nav-link">
+                    <button type="button" class="btn" onclick="openCart()">
+                        <div class="cart-btn">
+                            <span class="nav-icon">
+                                <i class="fa fa-cart-plus fa-2x"></i>
+                            </span>
+                            <div class="cart-items">0</div>
+                        </div>
+                    </button>
+                    
+                </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</section>
+<!--Navbar Section Ends Here-->
+
+<!--Banner Section Starts Here-->
+<section class="banner">
+    <div class="container-fluid main-banner">
+        <div class="row">
+            <div class="col-md-6 text-center banner-left">
+                <h1 class="heading"><b>The COVID-19 Store</b></h1>
+                <p class="heading-description">Access to all covid-19 essentials 24X7 is a basic need in this time, and here we are for all your needs and support.</p>
+                <button class="btn btn1">Know More</button>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="images/main-image.jpg" alt="Banner-Image">
+            </div>
+        </div>
+    </div>
+</section>
+<!--Banner Section Ends Here-->
+
+<!--Banner-text Starts Here-->
+<section class="banner-text">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3 banner-text-left">
+                <h1 class="heading">Let's Come Together</h1>
+                <p>We live in an interconnected world, in an interconnected time, and we need holistic solutions</p>
+            </div>
+            <div class="col-md-3 banner-text-right">
+                <img src="images/banner-text.jpg" alt="">
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--Banner-text Ends Here-->
+
+<!--Product Section Starts From Here-->
+<section id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="heading"><b>our Store</b></h1>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-2 Product-Nav"><a href="#mask">Mask</a></div>
+                <div class="col-md-2 Product-Nav"><a href="#PPEkits">PPE-Kits</a></div>
+                <div class="col-md-2 Product-Nav"><a href="#thermometer">Thermometers</a></div>
+                <div class="col-md-2 Product-Nav"><a href="#sanitizers">Sanitisers</a></div>
+                <div class="col-md-2 Product-Nav"><a href="#medicines">Medicines</a></div>
+                <div class="col-md-1"><a href=""></a></div>
+            </div>
+            <!--------------Product Mask Start Here------------>
+            <h5 class="heading subHeading">Covid-19 Masks</h5>
+            <div class="row" id="mask">
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/mask-1.jpg" alt="facemask image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Disposable Blue Mask</h3>
+                        <h5>100 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/mask-2.jpg" alt="facemask image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Disposable Blue Mask</h3>
+                        <h5>100 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/mask-3.jpg" alt="facemask image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Disposable Blue Mask</h3>
+                        <h5>100 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/mask-4.jpg" alt="facemask image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Disposable Blue Mask</h3>
+                        <h5>100 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+            </div>
+            <!--------------Product Mask End Here------------>
+            <!--------------Product PPE-Kits Start Here------------>
+            <h5 class="heading subHeading">Covid-19 PPE-Kits</h5>
+            <div class="row" id="PPEkits">
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/ppe1.jpg" alt="PPE-Kits"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Full PPE Kit</h3>
+                        <h5>1000 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/ppe2.jpg" alt="PPE-Kits"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Isolation Gown(small)</h3>
+                        <h5>500 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/ppe3.jpg" alt="PPE-Kits"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Isolation Gown(large)</h3>
+                        <h5>500 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/ppe4.jpg" alt="PPE-Kits"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Isolation Coverall</h3>
+                        <h5>900 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+            </div>
+            <!--------------Product PPE-Kits End Here------------>
+            <!--------------Product Thermometer Start Here------------>
+            <h5 class="heading subHeading">Covid-19 Thermometers</h5>
+            <div class="row" id="thermometer">
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/thermo01.jpg" alt="thermometer"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Digital Thermometer(f89je4)</h3>
+                        <h5>1000 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/thermo02.jpg" alt="thermometer image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Digital Thermometer(hjuy77)</h3>
+                        <h5>1500 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/thermo03.jpg" alt="thermometer image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Infrared Thermometer(gh56)</h3>
+                        <h5>1800 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/thermo04.jpg" alt="thermometer image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Infrared Thermometer(yu78)</h3>
+                        <h5>3000 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+            </div>
+            <!--------------Product Thermometer End Here------------>
+            <!--------------Product Sanitiser Start Here------------>
+            <h5 class="heading subHeading">Covid-19 Sanitisers</h5>
+            <div class="row" id="sanitizers">
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/san01.jpg" alt="sanitizers image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Pocket Sanitizer</h3>
+                        <h5>40 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/san02.jpg" alt="sanitizers image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Sanitizer Spray</h3>
+                        <h5>100 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/san03.jpg" alt="sanitizers image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Sanitizer(Big)</h3>
+                        <h5>300 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/san04.jpg" alt="sanitizers image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Sanitizer-Liquid</h3>
+                        <h5>400 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+            </div>
+            <!--------------Product Sanitise End Here------------>
+            <!--------------Product Medicines Start Here------------>
+            <h5 class="heading subHeading">Covid-19 Medicines</h5>
+            <div class="row" id="medicines">
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/med01.jpg" alt="medicines image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Covid-19 Rapid Test</h3>
+                        <h5>200 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/med02.jpg" alt="medicines image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Vitamin C Tablets</h3>
+                        <h5>200 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="mask-blue.html"><img class="img-fluid" src="images/med03.jpg" alt="medicines image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Astrazeneca</h3>
+                        <h5>350 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+                <div class="col-md-3 product-column">
+                    <!----Single Product Starts Here----->
+                    <div class="product-top" >
+                        <a href="#"><img class="img-fluid" src="images/med04.jpg" alt="medicines image"></a>
+                        <div class="overlay-right">
+                        <button class="btn btn-secondary" title="Quick Shop"> <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-secondary" title="add to Wishlist"> <i class="fa fa-heart-o"></i>
+                        </button>
+                        <a href="index.html" class="btn btn-secondary add-cart" title="add to cart"> <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="product-bottom text-center">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <h3>Vacuoline-100mg</h3>
+                        <h5>400 <span style="font-family: sans-serif;">&#8377</span></h5>
+                    </div>
+                     <!----Single Product Ends Here----->
+                </div>
+            </div>
+            <!--------------Product Medicines End Here------------>
+        </div>
+</section>
+<!--Product Section Ends Here-->
+
+
+ <!--Testimonial Section-->
+ <section id="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <img src="images/nidhi.jpg" class="image-fluid rounded-circle" alt="Nidhi-Picture">
+            </div>
+            <div class="col-md-4">
+                <h1 class="heading">MEET NIDHI</h1>
+                <p>Hi! I am the creator of The COVID-19 Store. Thank you for shopping small! I believe everyones small efforts together can change the world. The pieces we put in our story become a part of that story. As we work closely with artist from all over the globe and handcraft each product, we do with careful attention to every detail because we know the value of your comfort. </p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+<!--Testimonial Section Ends Here-->
+<!--Volunteer Section Starts Here-->
+<section id="volunteer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="heading">Join the war against COVID-19 - Register as Volunteer</h1>
+                <p>Great support is forthcoming from people who want to help. Indian citizens and organizations desirous of volunteering their services for the Nation's fight against spread of Corona Virus.</p>
+                <p>Area of Contributions:<br />
+                    1) Health <br />
+                    2) Communication <br />
+                    3) Entrepreneurial <br />
+                    4) Essential Services
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                    <div class="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" id="Vname"><span class="mendatory-feild">*</span>
+                            <input type="text" class="form-control" placeholder="Email Address" id="Vemail">
+                            <input type="tel" class="form-control" placeholder="Mobile Number" id="Vcontact"><span class="mendatory-feild">*</span>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="">Area of Contributions</option>
+                                <option value="">Health</option>
+                                <option value="">Communication</option>
+                                <option value="">Entrepreneurial</option>
+                                <option value="">Essential Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group text-center">
+                            <textarea class="form-control" id="Vmessage" placeholder="Message"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn1" onclick="formValidationVolunteer()">Join Now</button>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <p class="text-center">Join now to be the first to know about restocks, promotions and receive
+                        10% off your first purchase in the shop!</p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</section>
+<!--Volunteer Section Ends Here-->
+<!--Footer Section-->
+<section class="footer">
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-md-2">
+                <h5>online Shopping</h5>
+                <ul>
+                    <li><a href="#">Mask</a></li>
+                    <li><a href="#">PPE Kits</a></li>
+                    <li><a href="#">Thermometers</a></li>
+                    <li><a href="#">Sanitizers</a></li>
+                    <li><a href="#">Medicines</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>useful links</h5>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">T&C</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Track orders</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation</a></li>
+                    <li><a href="#">Return</a></li>
+                    <li><a href="#">Whitehat</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>EXPERIENCE THE COVID-19 STORE APP ON MOBILE</h5>
+                <span><img src="images/playstore.png" alt="play-store logo" class="playstore"></span>
+                <span><img src="images/appstore.jpg" alt="app-store logo" class="appstore"></span>
+                <br />
+                <br />
+                <h5 class="text-center">KEEP IN TOUCH</h5>
+                    <a href="#"><i class="fa fa-facebook text-secondary fa-2x "></i></a>
+                    <a href="#"><i class="fa fa-twitter text-secondary fa-2x"></i></a>
+                    <a href="#"><i class="fa fa-youtube text-secondary fa-2x"></i></a>
+                    <a href="#"><i class="fa fa-instagram text-secondary fa-2x"></i></a>
+            </div>
+            <div class="col-md-4 feature-box">
+                <div class="feature-text">
+                    <img src="images/quality.png">
+                    <p> <b>100% ORIGINAL guarantee</b> for all products</p>
+                    <img src="images/return.png">
+                    <p> <b>Return within 30days</b> of receiving your order</p>
+                    <img src="images/delivery.jpg">
+                    <p> <b>Get free delivery</b> on first order</p>
+                    <img src="images/onlinepayment.png" alt="">
+                    <p> <b>Multiple Payment Options</b></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Modal start-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" name="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title heading" id="exampleModalLabel">Book now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form name="myForm">
+                <div class="form-group">
+                    <input type="text" class="form-control modal-control" placeholder="Name" id="nameFeild"><span class="mendatory-feild">*</span>
+                    <div class="clear"></div>
+                    <input type="email" class="form-control modal-control" placeholder="Email" id="emailFeild">
+                    <input type="tel" class="form-control modal-control" placeholder="Contact Number" id="contactFeild"><span class="mendatory-feild">*</span>
+                    <div class="clear"></div>
+                    <textarea class="form-control modal-control" id="addressFeild" placeholder="Address"></textarea><span class="mendatory-feild">*</span>
+                    <div class="clear"></div>
+                    <p class="text-center">We will get back to you soon with all available doctors details.</p>
+                    <p class="heading text-center">Thank You!</p>
+                </div>
+            </form>
+            
+        </div>
+        <div class="modal-footer text-center">
+          <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+          <button type="button" class="btn modal-btn" onclick="formValidation()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- modal end -->
+<!-- Cart Page Starts Here -->
+<div class="productsContainer">
+    <button class="btn" type="button" onclick="closeCart()" style="float: right;"><i class="fa fa-times" ></i></button>
+    <div class="productHeader">
+        <h2 class="heading">Your Cart </h2>
+    </div>
+    <div class="cartProducts">
+    </div>
+</div>
+<!-- Cart Page Ends Here -->
+
+</body>
+</html>
+
+
+
